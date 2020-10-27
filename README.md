@@ -7,3 +7,8 @@
 2. **Unchecked Exception** checked at runtime, inherit RuntimeException.
    * Example: ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException
 3. **Error**  is irrecoverable (OutOfMemoryError, VirtualMachineError, AssertionError)
+
+### Exception Hierarchy
+![](https://github.com/shamy1st/java-exceptions/blob/main/hierarchy.png)
+
+### 
