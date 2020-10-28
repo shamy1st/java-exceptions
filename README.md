@@ -98,5 +98,52 @@
         }
     }
     
-###
+### Chaining Exception
+
+    public class Main {
+        public static void main(String[] args) {
+            Account account = new Account();
+            try {
+                account.withdraw(100);
+            } catch (AccountException e) {
+                System.out.println(e.getMessage());
+                System.out.println(e.getCause().getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public class Account {
+        private int balance;
+
+        public void deposit(int value) throws IOException {
+            if(value <= 0) {
+                throw new IOException();
+            }
+        }
+
+        public void withdraw(int value) throws AccountException {
+            if(value > this.balance) {
+                throw new AccountException(new InsufficientFundsException());
+            }
+        }
+    }
+
+    public class AccountException extends Exception {
+        public AccountException(Exception cause) {
+            super(cause);
+        }
+    }
+
+    public class InsufficientFundsException extends Exception {
+        public InsufficientFundsException() {
+            super("Insufficient funds in your account!");
+        }
+
+        public InsufficientFundsException(String message) {
+            super(message);
+        }
+    }
+
+
 
