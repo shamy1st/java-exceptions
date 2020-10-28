@@ -26,6 +26,7 @@
                 e.printStackTrace();
             } finally {
                 //if the external resource class implements AutoClosable interface
+                //and you define the external resource in try-with block try()
                 //then no need to close the external resource here
                 /*
                 try {
