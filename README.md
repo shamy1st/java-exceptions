@@ -11,11 +11,11 @@
 ### Exception Hierarchy
 ![](https://github.com/shamy1st/java-exceptions/blob/main/hierarchy.png)
 
-### Catch Exception / Try-With
+### Catch Exception / Finally Block / Try-With
 
     public class Main {
         public static void main(String[] args) {
-            try(
+            try (
                 var reader = new FileReader("file.txt");
                 var writer = new FileReader("output.txt");
             ) {
@@ -37,3 +37,5 @@
             }
         }
     }
+
+### 
