@@ -39,4 +39,22 @@
         }
     }
 
-### 
+### Throw Exception
+
+    public class Main {
+        public static void main(String[] args) throws IOException {
+            Account account = new Account();
+            account.deposit(-1);
+        }
+    }
+
+    public class Account {
+        public void deposit(int value) throws IOException {
+            if(value <= 0) {
+                throw new IOException();
+            }
+        }
+    }
+
+### Custom Exception
+
