@@ -58,3 +58,45 @@
 
 ### Custom Exception
 
+    public class Main {
+        public static void main(String[] args) {
+            Account account = new Account();
+            try {
+                account.withdraw(100);
+            } catch (InsufficientFundsException e) {
+                System.out.println(e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public class Account {
+        private int balance;
+
+        public void deposit(int value) throws IOException {
+            if(value <= 0) {
+                throw new IOException();
+            }
+        }
+
+        public void withdraw(int value) throws InsufficientFundsException {
+            if(value > this.balance) {
+                throw new InsufficientFundsException();
+            }
+        }
+    }
+
+    //Checked -> extends Exception class
+    //Unchecked -> extends RuntimeException class
+    public class InsufficientFundsException extends Exception {
+        public InsufficientFundsException() {
+            super("Insufficient funds in your account!");
+        }
+
+        public InsufficientFundsException(String message) {
+            super(message);
+        }
+    }
+    
+###
+
